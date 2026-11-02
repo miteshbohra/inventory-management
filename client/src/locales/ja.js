@@ -6,8 +6,14 @@ export default {
     orders: '注文',
     finance: '財務',
     demandForecast: '需要予測',
+    reports: 'レポート',
+    restocking: '補充発注',
     companyName: '触媒コンポーネンツ',
-    subtitle: '在庫管理システム'
+    subtitle: '在庫管理システム',
+    mainNavigation: 'メインナビゲーション',
+    collapseSidebar: 'サイドバーを折りたたむ',
+    expandSidebar: 'サイドバーを展開',
+    openMenu: 'メニューを開く'
   },
 
   // Dashboard
@@ -112,7 +118,14 @@ export default {
     onTimeDelivery: '定時配達',
     itemsCount: '{count}件',
     quantity: '数量',
+    submittedOrders: '発注済み注文',
+    submittedOrdersDescription: 'サプライヤーに発注した補充注文',
+    noSubmittedOrders: '発注済みの補充注文はまだありません。',
+    submittedLoadError: '発注済み注文の読み込みに失敗しました',
+    leadTimeDays: '{count}日',
     table: {
+      leadTime: 'リードタイム',
+      submittedOn: '発注日',
       orderNumber: '注文番号',
       orderId: '注文ID',
       orderDate: '注文日',
@@ -198,12 +211,46 @@ export default {
     allMonths: 'すべての月'
   },
 
+  // Restocking
+  restocking: {
+    title: '補充発注',
+    description: '予算内で需要予測に基づく補充注文を計画します',
+    budget: '予算',
+    allocated: '割当額',
+    remaining: '残額',
+    budgetSlider: '補充予算',
+    budgetHint: '需要トレンドと成長率の高い順に、予算に収まる品目を追加します。',
+    recommendation: '推奨注文',
+    itemsCount: '{count}件',
+    placeOrder: '注文する',
+    placing: '注文中...',
+    notFitting: '予測品目のうち{count}件は、予算に収まらないか在庫で充足しています。',
+    empty: '現在の予算に収まる品目がありません。予算を増やすと推奨が表示されます。',
+    successTitle: '注文が完了しました',
+    successMessage: '注文{orderNumber}を送信しました。合計{total}、リードタイム{days}日。',
+    viewOrder: '注文一覧で確認',
+    errorFallback: '補充注文の送信に失敗しました',
+    loadError: '補充データの読み込みに失敗しました',
+    table: {
+      sku: 'SKU',
+      item: '品目',
+      trend: 'トレンド',
+      forecastedDemand: '予測需要',
+      inStock: '在庫数',
+      orderQty: '発注数量',
+      unitCost: '単価',
+      lineTotal: '小計',
+      leadTime: 'リードタイム'
+    }
+  },
+
   // Statuses
   status: {
     delivered: '配達済み',
     shipped: '出荷済み',
     processing: '処理中',
     backordered: 'バックオーダー',
+    submitted: '発注済み',
     inStock: '在庫あり',
     lowStock: '在庫僅少',
     adequate: '適量'

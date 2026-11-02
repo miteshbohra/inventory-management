@@ -1,0 +1,102 @@
+/*
+ * Design tokens for the SaaS-style layout.
+ * Values are extracted from the palette the app already used (slate neutrals,
+ * blue accent, green/orange/red status colors) so the visual identity is kept.
+ */
+:root {
+  /* Color: neutrals */
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+  --color-text: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-label: #475569;
+  --color-text-muted: #64748b;
+
+  /* Color: accent */
+  --color-accent: #2563eb;
+  --color-accent-soft: #eff6ff;
+  --color-accent-strong: #1d4ed8;
+
+  /* Color: status (solid + soft background + readable text on soft) */
+  --color-success: #059669;
+  --color-success-soft: #d1fae5;
+  --color-success-text: #065f46;
+  --color-warning: #ea580c;
+  --color-warning-soft: #fed7aa;
+  --color-warning-text: #92400e;
+  --color-danger: #dc2626;
+  --color-danger-soft: #fecaca;
+  --color-danger-text: #991b1b;
+  --color-danger-bg: #fef2f2;
+  --color-info: #2563eb;
+  --color-info-soft: #dbeafe;
+  --color-info-text: #1e40af;
+  /* "stable" trend badge keeps its indigo tint */
+  --color-stable-soft: #e0e7ff;
+  --color-stable-text: #3730a3;
+
+  /* Spacing: 4px base */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-raised: 0 8px 24px rgba(15, 23, 42, 0.12);
+
+  /* Type */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --sidebar-width-collapsed: 72px;
+  --topbar-height: 60px;
+  --content-max-width: 1600px;
+  /*
+   * Breakpoints (CSS vars cannot be used inside @media, so keep these in sync by hand
+   * with useSidebar.js and the @media rules in App.vue / AppSidebar.vue):
+   *   desktop >= 1024px  expanded sidebar, collapsible to the 72px rail (persisted)
+   *   tablet  640-1023px persistent 72px rail; expanding overlays the content
+   *   phone   < 640px    off-canvas drawer + top bar with hamburger
+   */
+
+  /*
+   * Layering. Existing modals use z-index 1000/2000 and the profile/language
+   * dropdowns 1000, so the shell layers must stay well below those.
+   */
+  --z-topbar: 40;
+  --z-backdrop: 45;
+  --z-sidebar: 50;
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+  }
+}

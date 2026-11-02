@@ -485,4 +485,16 @@ export default {
   border-radius: 8px;
   margin: 1rem 0;
 }
+
+/* Phones and small tablets (the 72px rail leaves ~560px at 700px wide): let the monthly bar chart
+   scroll inside its card rather than widening the page. */
+@media (max-width: 767px) {
+  .chart-container {
+    overflow-x: auto;
+  }
+
+  .bar-chart {
+    min-width: 520px;
+  }
+}
 </style>

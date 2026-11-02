@@ -2,6 +2,10 @@
   <div class="language-switcher">
     <button
       class="language-button"
+      :aria-label="localeName"
+      :title="localeName"
+      aria-haspopup="menu"
+      :aria-expanded="String(isDropdownOpen)"
       @click="toggleDropdown"
       @blur="handleBlur"
     >
@@ -122,20 +126,23 @@ const selectLanguage = (locale) => {
   font-weight: 500;
 }
 
+/* Menu opens upward, so the chevron points up when closed and down when open. */
 .chevron {
   color: #64748b;
   transition: transform 0.2s ease;
+  transform: rotate(180deg);
   flex-shrink: 0;
 }
 
 .chevron-open {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }
 
+/* Opens upward from the sidebar footer so it is never clipped by the viewport bottom. */
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.5rem);
-  right: 0;
+  bottom: calc(100% + var(--space-2));
+  left: 0;
   min-width: 160px;
   background: white;
   border: 1px solid #e2e8f0;

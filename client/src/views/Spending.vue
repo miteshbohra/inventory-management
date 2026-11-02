@@ -694,7 +694,7 @@ export default {
 
 .two-column-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
   gap: 1.75rem;
 }
 
@@ -848,5 +848,22 @@ export default {
 
 .text-right {
   text-align: right;
+}
+
+/* Phones: the 12-month bar charts cannot fit in ~300px, so they scroll inside
+   their card instead of widening the page (the new shell has no horizontal room to spare). */
+@media (max-width: 639px) {
+  .chart-legend {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  .chart-container {
+    overflow-x: auto;
+  }
+
+  .bar-chart {
+    min-width: 520px;
+  }
 }
 </style>

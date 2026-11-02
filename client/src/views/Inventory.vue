@@ -336,4 +336,16 @@ export default {
 .clickable-row:hover {
   background: #eff6ff !important;
 }
+
+/* Phones: the fixed 300px search box would overflow next to the title; let the header wrap. */
+@media (max-width: 639px) {
+  .card-header {
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    min-width: 0;
+    width: 100%;
+  }
+}
 </style>

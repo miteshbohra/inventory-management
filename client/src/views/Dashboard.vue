@@ -1268,4 +1268,19 @@ export default {
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(100, 116, 139, 0.3);
 }
+
+/* Two chart columns need ~1060px of content (cards have ~520px of min content). With the sidebar
+   (240px, or 72px rail) that is only reached around 1360px wide, so go single-column below that.
+   minmax(0, 1fr) lets columns shrink below their content. */
+@media (max-width: 1359px) {
+  .charts-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .order-health-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 </style>
