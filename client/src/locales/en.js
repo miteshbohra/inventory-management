@@ -6,8 +6,14 @@ export default {
     orders: 'Orders',
     finance: 'Finance',
     demandForecast: 'Demand Forecast',
+    reports: 'Reports',
+    restocking: 'Restocking',
     companyName: 'Catalyst Components',
-    subtitle: 'Inventory Management System'
+    subtitle: 'Inventory Management System',
+    mainNavigation: 'Main navigation',
+    collapseSidebar: 'Collapse sidebar',
+    expandSidebar: 'Expand sidebar',
+    openMenu: 'Open menu'
   },
 
   // Dashboard
@@ -112,7 +118,14 @@ export default {
     onTimeDelivery: 'On-Time Delivery',
     itemsCount: '{count} items',
     quantity: 'Qty',
+    submittedOrders: 'Submitted Orders',
+    submittedOrdersDescription: 'Restocking orders placed with suppliers',
+    noSubmittedOrders: 'No restocking orders have been submitted yet.',
+    submittedLoadError: 'Failed to load submitted orders',
+    leadTimeDays: '{count} days',
     table: {
+      leadTime: 'Lead Time',
+      submittedOn: 'Submitted',
       orderNumber: 'Order Number',
       orderId: 'Order ID',
       orderDate: 'Order Date',
@@ -198,12 +211,46 @@ export default {
     allMonths: 'All Months'
   },
 
+  // Restocking
+  restocking: {
+    title: 'Restocking',
+    description: 'Plan a restocking order from demand forecasts within a budget',
+    budget: 'Budget',
+    allocated: 'Allocated',
+    remaining: 'Remaining',
+    budgetSlider: 'Restocking Budget',
+    budgetHint: 'Items are prioritized by demand trend and growth, and added while they fit the budget.',
+    recommendation: 'Recommended Order',
+    itemsCount: '{count} items',
+    placeOrder: 'Place Order',
+    placing: 'Placing order...',
+    notFitting: '{count} forecast items do not fit the current budget or are already covered by stock.',
+    empty: 'No items fit the current budget. Increase the budget to see recommendations.',
+    successTitle: 'Order placed',
+    successMessage: 'Order {orderNumber} was submitted. Total {total}, lead time {days} days.',
+    viewOrder: 'View in Orders',
+    errorFallback: 'Failed to place the restocking order',
+    loadError: 'Failed to load restocking data',
+    table: {
+      sku: 'SKU',
+      item: 'Item',
+      trend: 'Trend',
+      forecastedDemand: 'Forecasted Demand',
+      inStock: 'In Stock',
+      orderQty: 'Order Qty',
+      unitCost: 'Unit Cost',
+      lineTotal: 'Line Total',
+      leadTime: 'Lead Time'
+    }
+  },
+
   // Statuses
   status: {
     delivered: 'Delivered',
     shipped: 'Shipped',
     processing: 'Processing',
     backordered: 'Backordered',
+    submitted: 'Submitted',
     inStock: 'In Stock',
     lowStock: 'Low Stock',
     adequate: 'Adequate'

@@ -2,6 +2,10 @@
   <div class="profile-menu">
     <button
       class="profile-button"
+      :aria-label="currentUser.name"
+      :title="currentUser.name"
+      aria-haspopup="menu"
+      :aria-expanded="String(isDropdownOpen)"
       @click="toggleDropdown"
       @blur="handleBlur"
     >
@@ -158,20 +162,29 @@ const handleLogout = () => {
   color: #0f172a;
 }
 
+/* Menu opens upward, so the chevron points up when closed and down when open. */
 .chevron {
   color: #64748b;
   transition: transform 0.2s ease;
+  transform: rotate(180deg);
+  flex-shrink: 0;
 }
 
 .chevron-open {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }
 
+/*
+ * Lives in the sidebar footer (bottom-left), so it opens upward and aligns to
+ * the left edge; opening downward would run off the bottom of the screen.
+ * min-width exceeds the 240px drawer on purpose; max-width keeps it on-screen.
+ */
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.5rem);
-  right: 0;
+  bottom: calc(100% + var(--space-2));
+  left: 0;
   min-width: 280px;
+  max-width: calc(100vw - var(--space-4) * 2);
   background: white;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
